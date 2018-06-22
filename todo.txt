@@ -1,0 +1,9 @@
+----- css for current "page" button
+---filter for current content to be shown correctly
+----- filter for carousel content to be shown
+----- link to that filter from the page buttons
+----- proper links to all social media
+mailchimp functionality on commision button
+----- FIN!
+
+---

@@ -1,0 +1,180 @@
+*{margin: 0; padding: 0; font-size: 100%; text-decoration: none; color: #fff; font-size: 1.25vh; font-family: Open Sans, sans-serif;}
+html{width: 100%; height: 100%; background: linear-gradient(30deg, #07a, #075); background-attachment: fixed;}
+
+body{
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 2.5%;
+  margin: auto;
+  max-width: 1250px;
+}
+
+body > *{
+  flex: 1 100%;
+}
+
+header img{width: 25vh;}
+header nav img{width: 5vh;}
+header nav .currentPage img{background: rgba(255, 255, 255, 0.5);}
+
+footer{
+  position: absolute;
+  left: 2.5%;
+  bottom: 2.5%;
+  width: 95%;
+  font-size: 14px;
+}
+
+main{
+  flex: 5 0;
+  max-width: 100%;
+}
+
+aside{
+  flex: 1 0;
+  height: 70vh;
+  max-width: 100%;
+  position: relative;
+  background: #222;
+}
+aside div{
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  overflow: scroll;
+}
+aside div figure{
+  flex: 1 100%;
+  max-height: 10vw;
+  padding: 1% 2px;
+}
+::-webkit-scrollbar{display: none;}
+#contentContainer{
+  text-align: left;
+  height: 70vh;
+}
+#contentContainer figure{width: 95%;}
+#contentContainer figure figcaption{
+  display: flex;
+  text-align: right;
+}
+#contentContainer figure figcaption > *{
+  flex: 1 auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+#contentContainer figure figcaption nav{text-align: left;}
+#contentContainer figure figcaption nav img{width: 4vh;}
+header nav img:hover, #contentContainer figure figcaption img:hover{background: rgba(255, 255, 255, 0.25);}
+
+* figure{
+  max-width: 100%;
+  height: 100%;
+}
+figure > img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  background: #222;
+}
+
+button{
+  border-radius: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1.25vh 4vh;
+  cursor: pointer;
+}
+button.gold{
+  background: #d93;
+  border: solid #fb5 1px;
+}
+button.gold:hover{background: #fb5;}
+
+#carousel figure{display: none;}
+#carousel figure.active{display: block;}
+#carousel figure:hover > *, #carousel figure .currentContent{background: rgba(255, 255, 255, 0.25);}
+.carousel-button{
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  font-size: 200%;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.25);
+}
+#carousel-up{top: 0;}
+#carousel-up::after{content: "▴";}
+#carousel-down{bottom: 0;}
+#carousel-down::after{content: "▾";}
+
+@media all and (orientation: portrait){
+  header nav{
+    text-align: center;
+    display: flex;
+    padding: 5% 0;
+  }
+  header nav > *{flex: 1 0;}
+  
+  aside{
+    flex: 1 100%;
+    height: 17.5vh;
+  }
+  aside div{
+    flex-flow: row;
+    height: 99%;
+    margin: 0;
+    padding: 0;
+  }
+  aside div figure{
+    max-height: 95%;
+    padding: 0 2px;
+    margin: 0;
+    min-width: 25vh;
+  }
+
+  #contentContainer {height: 50vh;}
+  #contentContainer figure{margin: auto;}
+  #contentContainer figure img{max-height: 35vh;}
+  #contentContainer figure figcaption{
+    text-align: center;
+    flex-flow: row wrap;
+  }
+  #contentContainer figure figcaption nav{
+    padding: 5% 10% 2.5% 10%;
+    display: flex;
+    text-align: center;
+    order: 2;
+  }
+  #contentContainer figure figcaption nav a{
+    flex: 1 0;
+  }
+
+  .carousel-button{
+    width: auto;
+    height: 100%;
+    left: 0;
+    text-align: center;
+    line-height: 17.5vh;
+  }
+  #carousel-down{
+    top: 0;
+    left: auto;
+    right: 0;
+  }
+  #carousel-up::after{
+    content: "◂";
+  }
+  #carousel-down::after{
+    content: "▸";
+  }
+}
+
+@media all and (max-height: 820px){
+  *{font-size: 12px;}
+  header nav img{width: 35px;}
+  #contentContainer figure figcaption nav img{width: 25px;}
+  footer{text-align: right;}
+}
