@@ -96,9 +96,33 @@ function changeCurrentContent(e){
 
 document.getElementById("contentFilters").getElementsByClassName("currentPage")[0].click();
 
+document.getElementById("tydiv").addEventListener("click", function(e){
+  if(e.target === this){
+    document.getElementById("tydiv").style.visibility = "hidden";
+    document.getElementById("tydiv").style.opacity = 0;
+  }
+});
 
+document.getElementById("mc_embed_signup").addEventListener("click", function(e){
+  if(e.target === this){
+    document.getElementById("mc_embed_signup").style.visibility = "hidden";
+    document.getElementById("mc_embed_signup").style.opacity = 0;
+  }
+});
+document.getElementById("commissionButton").addEventListener("click", function(e){
+  document.getElementById("mc_embed_signup").style.visibility = "inherit";
+  document.getElementById("mc_embed_signup").style.opacity = 1;
+});
 
+document.getElementById("thanksOkButton").addEventListener("click", function(e){
+  document.getElementById("tydiv").style.visibility = "hidden";
+  document.getElementById("tydiv").style.opacity = 0;
+});
 
+if(window.location.hash === "#thanks"){
+  document.getElementById("tydiv").style.visibility = "inherit";
+  document.getElementById("tydiv").style.opacity = 1;
+}
 
 
 

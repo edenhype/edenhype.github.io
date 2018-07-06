@@ -1,4 +1,4 @@
-*{margin: 0; padding: 0; font-size: 100%; text-decoration: none; color: #fff; font-size: 1.25vh; font-family: Open Sans, sans-serif;}
+*{margin: 0; padding: 0; font-size: 100%; text-decoration: none; font-family: Open Sans, sans-serif;}
 html{width: 100%; height: 100%; background: linear-gradient(30deg, #07a, #075); background-attachment: fixed;}
 
 body{
@@ -12,6 +12,7 @@ body{
 body > *{
   flex: 1 100%;
 }
+header, main, aside, footer{color: #fff;  font-size: 1.25vh;}
 
 header img{width: 25vh;}
 header nav img{width: 5vh;}
@@ -23,6 +24,8 @@ footer{
   bottom: 2.5%;
   width: 95%;
   font-size: 14px;
+  pointer-events: none;
+  z-index: -1;
 }
 
 main{
@@ -48,7 +51,7 @@ aside div figure{
   max-height: 10vw;
   padding: 1% 2px;
 }
-::-webkit-scrollbar{display: none;}
+aside ::-webkit-scrollbar{display: none;}
 #contentContainer{
   text-align: left;
   height: 70vh;
@@ -78,18 +81,18 @@ figure > img{
   background: #222;
 }
 
-button{
+button.gold{
   border-radius: 2px;
   font-weight: 700;
   text-transform: uppercase;
   padding: 1.25vh 4vh;
   cursor: pointer;
 }
-button.gold{
-  background: #d93;
-  border: solid #fb5 1px;
+button.gold, input[type='submit']{
+  background: #d93 !important;
+  border: solid #fb5 1px !important;
 }
-button.gold:hover{background: #fb5;}
+button.gold:hover, input[type='submit']:hover{background: #fb5 !important;}
 
 #carousel figure{display: none;}
 #carousel figure.active{display: block;}
@@ -109,6 +112,15 @@ button.gold:hover{background: #fb5;}
 #carousel-up::after{content: "▴";}
 #carousel-down{bottom: 0;}
 #carousel-down::after{content: "▾";}
+
+.disappears{background:rgba(0, 0, 0, 0.75); clear:left; font:16px Helvetica,Arial,sans-serif; }
+.disappears{position: absolute; width: 100%; top: 0; left: 0; height: 100%; padding: 0 !important;}
+.disappears{visibility: hidden; opacity: 0; transition: opacity 0.1s linear;}
+.disappears > *{width: 350px; max-width: 90%; max-height: 90%; margin: 20% auto 0 auto; background: #fff; padding: 2.5% !important;}
+
+#tydiv div p{font-size: 16px;}
+#tydiv div p:first-child{font-size: 18px; font-weight: 700; padding-bottom: 25px;}
+#tydiv div button{margin-top: 25px;}
 
 @media all and (orientation: portrait){
   header nav{
